@@ -1,0 +1,83 @@
+openapi: 3.0.4
+info:
+  title: Treasury Yields
+  description: >-
+    Treasury Yields provides current and historical interest rates for US
+    Treasury securities including T-bills, T-notes, T-bonds, TIPS, and Floating
+    Rate Notes. Essential data for yield curve analysis and fixed income
+    research.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/treasuryyields:
+    get:
+      summary: Get Treasury Yields
+      description: Get current or historical Treasury securities interest rates
+      operationId: treasuryyields
+      parameters:
+        - name: date
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            Optional date in YYYY-MM-DD format for historical lookup. Omit for
+            current data.
+          example: '2024-01-15'
+        - name: type
+          in: query
+          schema:
+            type: string
+          required: false
+          description: 'Optional security type filter: bills, notes, bonds, tips, frn'
+          example: bonds
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  date: '2024-02-01'
+                  bills: 5.24
+                  notes: 4.35
+                  bonds: 4.67
+                  tips: 2.15
+                  frn: 5.31
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
