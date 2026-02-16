@@ -44,7 +44,10 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient
 # Initialize the client with your APIVerve API key
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]")
 
-query = { "date": "2024-01-15", "type": "bonds" }
+query = {
+    "date": "2024-01-15",
+    "type": "bonds"
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "date": "2024-01-15", "type": "bonds" }
+query = {
+    "date": "2024-01-15",
+    "type": "bonds"
+}
 ```
 
 ###### Simple Request
@@ -125,7 +131,10 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient, Treasuryy
 
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]")
 
-query = { "date": "2024-01-15", "type": "bonds" }
+query = {
+    "date": "2024-01-15",
+    "type": "bonds"
+}
 
 try:
     result = api.execute(query)
@@ -146,7 +155,10 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient, Treasuryy
 
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]")
 
-query = { "date": "2024-01-15", "type": "bonds" }
+query = {
+    "date": "2024-01-15",
+    "type": "bonds"
+}
 
 try:
     result = api.execute(query)
@@ -180,7 +192,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient, TreasuryyieldsAPIClientError
 
-query = { "date": "2024-01-15", "type": "bonds" }
+query = {
+    "date": "2024-01-15",
+    "type": "bonds"
+}
 
 # Using context manager ensures proper cleanup
 with TreasuryyieldsAPIClient("[YOUR_API_KEY]") as api:
@@ -206,7 +221,10 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient
 # Enable debug mode
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "date": "2024-01-15", "type": "bonds" }
+query = {
+    "date": "2024-01-15",
+    "type": "bonds"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -221,8 +239,12 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient
 
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "date": "2024-01-15",
+    "type": "bonds"
+}
+
 try:
-    query = { "date": "2024-01-15", "type": "bonds" }
     result = api.execute(query)
     print(result)
 finally:
