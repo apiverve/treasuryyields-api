@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/treasuryyields",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Treasury Yields provides current and historical interest rates for US Treasury securities including T-bills, T-notes, T-bonds, TIPS, and Floating Rate Notes. Essential data for yield curve analysis and fixed income research.",
   "main": "index.js",
   "types": "index.d.ts",
