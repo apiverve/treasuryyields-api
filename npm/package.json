@@ -1,12 +1,12 @@
 {
   "name": "@apiverve/treasuryyields",
-  "version": "1.1.14",
-  "description": "Treasury Yields provides current and historical interest rates for US Treasury securities including T-bills, T-notes, T-bonds, TIPS, and Floating Rate Notes. Essential data for yield curve analysis and fixed income research.",
+  "version": "1.2.0",
+  "description": "Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Essential data for yield curve analysis and fixed income research.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
     "index.js",
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    ""
+    "treasury yields", "t-bill rates", "treasury bonds", "treasury notes", "tips rates"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,15 +34,14 @@
   "bugs": {
     "url": "https://github.com/apiverve/treasuryyields-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/treasuryyields?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://treasuryyields.apiverve.com?utm_source=npm&utm_medium=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
     "dotenv": "^16.4.7"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "promise": "^8.3.0",
-    "axios": "1.13.2"
+    "axios": "1.13.2",
+    "form-data": "^4.0.1"
   }
 }
