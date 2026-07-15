@@ -1,13 +1,13 @@
-# [Treasury Yields API](https://apiverve.com/marketplace/treasuryyields?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Treasury Yields API](https://treasuryyields.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
-Treasury Yields provides current and historical interest rates for US Treasury securities including T-bills, T-notes, T-bonds, TIPS, and Floating Rate Notes. Essential data for yield curve analysis and fixed income research.
+Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Essential data for yield curve analysis and fixed income research.
 
 The Treasury Yields API provides a simple, reliable way to integrate treasury yields functionality into your applications. Built for developers who need production-ready treasury yields capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/treasuryyields?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://treasuryyields.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/treasuryyields?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://treasuryyields.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -50,7 +50,7 @@ callTreasuryYieldsAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/treasuryyields?param=value" \
+curl -X GET "https://api.apiverve.com/v1/treasuryyields" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,14 +150,14 @@ go get github.com/apiverve/treasuryyields-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
 
 ## Documentation
 
-- 🏠 **API Home:** [Treasury Yields API](https://apiverve.com/marketplace/treasuryyields?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Treasury Yields API](https://treasuryyields.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/treasuryyields](https://docs.apiverve.com/ref/treasuryyields)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -169,7 +169,7 @@ go get github.com/apiverve/treasuryyields-api/go
 The Treasury Yields API is commonly used for:
 
 - **Web Applications** - Add treasury yields features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with treasury yields capabilities
 - **Data Pipelines** - Process and analyze data at scale
@@ -199,7 +199,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Treasury Yields API](https://apiverve.com/marketplace/treasuryyields?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Treasury Yields API](https://treasuryyields.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
