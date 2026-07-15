@@ -1,13 +1,13 @@
 # Treasury Yields API
 
-Treasury Yields provides current and historical interest rates for US Treasury securities including T-bills, T-notes, T-bonds, TIPS, and Floating Rate Notes. Essential data for yield curve analysis and fixed income research.
+Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Essential data for yield curve analysis and fixed income research.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/treasuryyields.svg)](https://www.npmjs.com/package/@apiverve/treasuryyields)
 
-This is a Javascript Wrapper for the [Treasury Yields API](https://apiverve.com/marketplace/treasuryyields?utm_source=npm&utm_medium=readme)
+This is a Javascript Wrapper for the [Treasury Yields API](https://treasuryyields.apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -60,8 +60,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  date: "2024-01-15",
-  type: "bonds"
+  date: "2025-06",
+  type: "10yr"
 };
 
 api.execute(query, function (error, data) {
@@ -81,8 +81,8 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  date: "2024-01-15",
-  type: "bonds"
+  date: "2025-06",
+  type: "10yr"
 };
 
 api.execute(query)
@@ -103,8 +103,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  date: "2024-01-15",
-  type: "bonds"
+  date: "2025-06",
+  type: "10yr"
 };
 
     try {
@@ -130,7 +130,30 @@ async function makeRequest() {
     "notes": 4.35,
     "bonds": 4.67,
     "tips": 2.15,
-    "frn": 5.31
+    "frn": 5.31,
+    "changes": {
+      "bills": {
+        "change1d": 0.02,
+        "direction": "up"
+      },
+      "notes": {
+        "change1d": -0.03,
+        "direction": "down"
+      },
+      "bonds": {
+        "change1d": 0.01,
+        "direction": "up"
+      },
+      "tips": {
+        "change1d": 0,
+        "direction": "unchanged"
+      },
+      "frn": {
+        "change1d": 0.02,
+        "direction": "up"
+      }
+    },
+    "previousDate": "2024-01-31"
   }
 }
 ```
