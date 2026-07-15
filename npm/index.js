@@ -30,7 +30,7 @@ class treasuryyieldsWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/treasuryyields';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"date":{"type":"string","required":false,"format":"date"},"type":{"type":"string","required":false}};
+        this.validationRules = {"date":{"type":"string","required":false},"type":{"type":"string","required":false}};
     }
 
     /**
