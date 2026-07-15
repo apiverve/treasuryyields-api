@@ -15,8 +15,8 @@ const api = new treasuryyieldsAPI({
 
 // Example query
 var query = {
-  date: "2024-01-15",
-  type: "bonds"
+  date: "2025-06",
+  type: "10yr"
 };
 
 // Make the API request using callback
