@@ -1,13 +1,13 @@
 TreasuryYields API
 ============
 
-Treasury Yields provides current and historical interest rates for US Treasury securities including T-bills, T-notes, T-bonds, TIPS, and Floating Rate Notes. Essential data for yield curve analysis and fixed income research.
+Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Essential data for yield curve analysis and fixed income research.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [TreasuryYields API](https://apiverve.com/marketplace/treasuryyields?utm_source=nuget&utm_medium=readme)
+This is a .NET Wrapper for the [TreasuryYields API](https://treasuryyields.apiverve.com?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.TreasuryYields;
 
 class Program
 {
@@ -60,9 +60,9 @@ class Program
         // Initialize the API client
         var apiClient = new TreasuryYieldsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+        var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
         // Make the API call
@@ -117,7 +117,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.TreasuryYields;
 
 public class Example
 {
@@ -125,9 +125,9 @@ public class Example
     {
         var apiClient = new TreasuryYieldsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+        var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -150,7 +150,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.TreasuryYields;
 
 public class Example
 {
@@ -158,9 +158,9 @@ public class Example
     {
         var apiClient = new TreasuryYieldsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+        var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -188,7 +188,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.TreasuryYields;
 
 public class Example
 {
@@ -196,9 +196,9 @@ public class Example
     {
         var apiClient = new TreasuryYieldsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+        var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
         try
@@ -241,7 +241,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.TreasuryYields;
 
 public class Example
 {
@@ -253,9 +253,9 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+        var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
         try
@@ -295,9 +295,9 @@ var apiClient = new TreasuryYieldsAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -322,9 +322,9 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -341,9 +341,9 @@ var apiClient = new TreasuryYieldsAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -354,9 +354,9 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    date = "2024-01-15",
-    type = "bonds"
+var queryOptions = new TreasuryYieldsQueryOptions {
+    Date = "2025-06",
+    Type = "10yr"
 };
 
 using (var apiClient = new TreasuryYieldsAPIClient("[YOUR_API_KEY]"))
@@ -381,7 +381,30 @@ using (var apiClient = new TreasuryYieldsAPIClient("[YOUR_API_KEY]"))
     "notes": 4.35,
     "bonds": 4.67,
     "tips": 2.15,
-    "frn": 5.31
+    "frn": 5.31,
+    "changes": {
+      "bills": {
+        "change1d": 0.02,
+        "direction": "up"
+      },
+      "notes": {
+        "change1d": -0.03,
+        "direction": "down"
+      },
+      "bonds": {
+        "change1d": 0.01,
+        "direction": "up"
+      },
+      "tips": {
+        "change1d": 0,
+        "direction": "unchanged"
+      },
+      "frn": {
+        "change1d": 0.02,
+        "direction": "up"
+      }
+    },
+    "previousDate": "2024-01-31"
   }
 }
 ```
