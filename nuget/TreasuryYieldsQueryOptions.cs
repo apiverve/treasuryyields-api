@@ -11,13 +11,13 @@ namespace APIVerve.API.TreasuryYields
     public class TreasuryYieldsQueryOptions
     {
         /// <summary>
-        /// Optional date in YYYY-MM-DD format for historical lookup. Omit for current data.
+        /// Optional month in YYYY-MM format for a recent-month lookup (recent months only). Omit for current data.
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }
 
         /// <summary>
-        /// Optional security type filter: bills, notes, bonds, tips, frn
+        /// Optional filter for a single point. Legacy security types: bills, notes, bonds, tips, frn. Or a maturity: 1mo, 3mo, 6mo, 1yr, 2yr, 3yr, 5yr, 7yr, 10yr, 20yr, 30yr
         /// </summary>
         [JsonProperty("type")]
         public string Type { get; set; }
