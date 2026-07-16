@@ -25,26 +25,74 @@ namespace APIVerve.API.TreasuryYields
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("date")]
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("bills")]
-        public double Bills { get; set; }
+        public double? Bills { get; set; }
 
         [JsonProperty("notes")]
-        public double Notes { get; set; }
+        public double? Notes { get; set; }
 
         [JsonProperty("bonds")]
-        public double Bonds { get; set; }
+        public double? Bonds { get; set; }
 
         [JsonProperty("tips")]
-        public double Tips { get; set; }
+        public double? Tips { get; set; }
 
         [JsonProperty("frn")]
-        public double Frn { get; set; }
+        public double? Frn { get; set; }
+
+        [JsonProperty("changes")]
+        public Changes Changes { get; set; }
+
+        [JsonProperty("previousDate")]
+        public DateTimeOffset? PreviousDate { get; set; }
+    }
+
+    public partial class Changes
+    {
+        [JsonProperty("bills")]
+        public Bills Bills { get; set; }
+
+        [JsonProperty("notes")]
+        public Bills Notes { get; set; }
+
+        [JsonProperty("bonds")]
+        public Bills Bonds { get; set; }
+
+        [JsonProperty("tips")]
+        public Bills Tips { get; set; }
+
+        [JsonProperty("frn")]
+        public Bills Frn { get; set; }
+    }
+
+    public partial class Bills
+    {
+        [JsonProperty("change1d")]
+        public double? Change1D { get; set; }
+
+        [JsonProperty("direction")]
+        public string Direction { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
