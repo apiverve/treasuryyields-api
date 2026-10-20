@@ -1,13 +1,12 @@
 Treasury Yields API
 ============
 
-Treasury Yields provides current and historical interest rates for US Treasury securities including T-bills, T-notes, T-bonds, TIPS, and Floating Rate Notes. Essential data for yield curve analysis and fixed income research.
+Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Essential data for yield curve analysis and fixed income research.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Treasury Yields API](https://apiverve.com/marketplace/treasuryyields?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-treasuryyields.svg)](https://pypi.org/project/apiverve-treasuryyields/)
+
+This is a Python wrapper for the [Treasury Yields API](https://apiverve.com/marketplace/treasuryyields?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-treasuryyields
 
 ## Configuration
 
-Before using the treasuryyields API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Treasury Yields API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -45,8 +44,8 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]")
 
 query = {
-    "date": "2024-01-15",
-    "type": "bonds"
+    "date": "2025-06",
+    "type": "10yr"
 }
 
 try:
@@ -63,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The Treasury Yields API documentation is found here: [https://docs.apiverve.com/ref/treasuryyields](https://docs.apiverve.com/ref/treasuryyields?utm_source=pypi&utm_medium=readme).
+The Treasury Yields API documentation is found here: [https://docs.apiverve.com/ref/treasuryyields](https://docs.apiverve.com/ref/treasuryyields?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -86,8 +85,8 @@ Using the API client, you can perform requests to the API.
 
 ```python
 query = {
-    "date": "2024-01-15",
-    "type": "bonds"
+    "date": "2025-06",
+    "type": "10yr"
 }
 ```
 
@@ -113,7 +112,30 @@ print(result)
     "notes": 4.35,
     "bonds": 4.67,
     "tips": 2.15,
-    "frn": 5.31
+    "frn": 5.31,
+    "changes": {
+      "bills": {
+        "change1d": 0.02,
+        "direction": "up"
+      },
+      "notes": {
+        "change1d": -0.03,
+        "direction": "down"
+      },
+      "bonds": {
+        "change1d": 0.01,
+        "direction": "up"
+      },
+      "tips": {
+        "change1d": 0,
+        "direction": "unchanged"
+      },
+      "frn": {
+        "change1d": 0.02,
+        "direction": "up"
+      }
+    },
+    "previousDate": "2024-01-31"
   }
 }
 ```
@@ -132,8 +154,8 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient, Treasuryy
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]")
 
 query = {
-    "date": "2024-01-15",
-    "type": "bonds"
+    "date": "2025-06",
+    "type": "10yr"
 }
 
 try:
@@ -156,8 +178,8 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient, Treasuryy
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]")
 
 query = {
-    "date": "2024-01-15",
-    "type": "bonds"
+    "date": "2025-06",
+    "type": "10yr"
 }
 
 try:
@@ -193,8 +215,8 @@ The client supports the context manager protocol for automatic resource cleanup:
 from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient, TreasuryyieldsAPIClientError
 
 query = {
-    "date": "2024-01-15",
-    "type": "bonds"
+    "date": "2025-06",
+    "type": "10yr"
 }
 
 # Using context manager ensures proper cleanup
@@ -222,8 +244,8 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
-    "date": "2024-01-15",
-    "type": "bonds"
+    "date": "2025-06",
+    "type": "10yr"
 }
 
 # Debug information will be printed to console
@@ -240,8 +262,8 @@ from apiverve_treasuryyields.apiClient import TreasuryyieldsAPIClient
 api = TreasuryyieldsAPIClient("[YOUR_API_KEY]")
 
 query = {
-    "date": "2024-01-15",
-    "type": "bonds"
+    "date": "2025-06",
+    "type": "10yr"
 }
 
 try:
@@ -256,7 +278,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -267,12 +289,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
