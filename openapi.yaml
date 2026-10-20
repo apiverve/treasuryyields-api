@@ -20,7 +20,7 @@ servers:
 paths:
   /v1/treasuryyields:
     get:
-      summary: Get Treasury Yields
+      summary: Treasury Yields
       description: Get current or historical Treasury securities interest rates
       operationId: treasuryyields
       parameters:
