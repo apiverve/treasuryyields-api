@@ -11,7 +11,7 @@ namespace APIVerve.API.TreasuryYields
     public class TreasuryYieldsQueryOptions
     {
         /// <summary>
-        /// Optional month in YYYY-MM format for a recent-month lookup (recent months only). Omit for current data.
+        /// Optional month in YYYY-MM format, back to 2010-01; returns that month's closing curve. Omit for the latest daily curve.
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }

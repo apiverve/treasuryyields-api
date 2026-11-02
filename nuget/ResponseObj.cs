@@ -35,11 +35,17 @@ namespace APIVerve.API.TreasuryYields
         [JsonProperty("date")]
         public DateTimeOffset? Date { get; set; }
 
+        [JsonProperty("yields")]
+        public Dictionary<string, double?> Yields { get; set; }
+
+        [JsonProperty("realYields")]
+        public Dictionary<string, double?> RealYields { get; set; }
+
         [JsonProperty("bills")]
         public double? Bills { get; set; }
 
         [JsonProperty("notes")]
-        public double? Notes { get; set; }
+        public long? Notes { get; set; }
 
         [JsonProperty("bonds")]
         public double? Bonds { get; set; }
@@ -51,37 +57,40 @@ namespace APIVerve.API.TreasuryYields
         public double? Frn { get; set; }
 
         [JsonProperty("changes")]
-        public Changes Changes { get; set; }
+        public Dictionary<string, Change> Changes { get; set; }
 
-        [JsonProperty("previousDate")]
-        public DateTimeOffset? PreviousDate { get; set; }
+        [JsonProperty("spread10yr2yr")]
+        public double? Spread10Yr2Yr { get; set; }
+
+        [JsonProperty("spread10yr3mo")]
+        public double? Spread10Yr3Mo { get; set; }
+
+        [JsonProperty("spread30yr5yr")]
+        public double? Spread30Yr5Yr { get; set; }
+
+        [JsonProperty("spread5yr2yr")]
+        public double? Spread5Yr2Yr { get; set; }
+
+        [JsonProperty("inverted10yr2yr")]
+        public bool? Inverted10Yr2Yr { get; set; }
+
+        [JsonProperty("inverted10yr3mo")]
+        public bool? Inverted10Yr3Mo { get; set; }
+
+        [JsonProperty("curveShape")]
+        public string CurveShape { get; set; }
+
+        [JsonProperty("breakevenInflation")]
+        public Dictionary<string, double?> BreakevenInflation { get; set; }
     }
 
-    public partial class Changes
-    {
-        [JsonProperty("bills")]
-        public Bills Bills { get; set; }
-
-        [JsonProperty("notes")]
-        public Bills Notes { get; set; }
-
-        [JsonProperty("bonds")]
-        public Bills Bonds { get; set; }
-
-        [JsonProperty("tips")]
-        public Bills Tips { get; set; }
-
-        [JsonProperty("frn")]
-        public Bills Frn { get; set; }
-    }
-
-    public partial class Bills
+    public partial class Change
     {
         [JsonProperty("change1d")]
         public double? Change1D { get; set; }
 
         [JsonProperty("direction")]
-        public string Direction { get; set; }
+        public Direction? Direction { get; set; }
     }
 
     public partial class Premium
@@ -95,4 +104,6 @@ namespace APIVerve.API.TreasuryYields
         [JsonProperty("locked_fields")]
         public string[] LockedFields { get; set; }
     }
+
+    public enum Direction { Unchanged, Up };
 }
