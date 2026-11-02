@@ -25,27 +25,33 @@ declare module '@apiverve/treasuryyields' {
 
 
   interface TreasuryYieldsData {
-      date:         Date | null;
-      bills:        number | null;
-      notes:        number | null;
-      bonds:        number | null;
-      tips:         number | null;
-      frn:          number | null;
-      changes:      Changes;
-      previousDate: Date | null;
+      date:               Date | null;
+      yields:             { [key: string]: number | null };
+      realYields:         { [key: string]: number | null };
+      bills:              number | null;
+      notes:              number | null;
+      bonds:              number | null;
+      tips:               number | null;
+      frn:                number | null;
+      changes:            { [key: string]: Change };
+      spread10Yr2Yr:      number | null;
+      spread10Yr3Mo:      number | null;
+      spread30Yr5Yr:      number | null;
+      spread5Yr2Yr:       number | null;
+      inverted10Yr2Yr:    boolean | null;
+      inverted10Yr3Mo:    boolean | null;
+      curveShape:         null | string;
+      breakevenInflation: { [key: string]: number | null };
   }
   
-  interface Changes {
-      bills: Bills;
-      notes: Bills;
-      bonds: Bills;
-      tips:  Bills;
-      frn:   Bills;
-  }
-  
-  interface Bills {
+  interface Change {
       change1D:  number | null;
-      direction: null | string;
+      direction: Direction | null;
+  }
+  
+  enum Direction {
+      Unchanged = "unchanged",
+      Up = "up",
   }
 
   export default class treasuryyieldsWrapper {
