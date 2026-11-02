@@ -1,7 +1,7 @@
 {
     "name": "apiverve/treasuryyields",
-    "description": "Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Essential data for yield curve analysis and fixed income research.",
-    "version": "1.2.3",
+    "description": "Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Paid plans add curve spreads, inversion flags, the curve's shape and breakeven inflation for yield curve analysis.",
+    "version": "1.2.4",
     "type": "library",
     "license": "MIT",
     "authors": [
