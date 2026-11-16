@@ -1,6 +1,6 @@
 # [Treasury Yields API](https://apiverve.com/marketplace/treasuryyields?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Paid plans add curve spreads, inversion flags, the curve&#x27;s shape and breakeven inflation for yield curve analysis.
+Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Every plan gets today&#x27;s full nominal curve. Paid plans add history back to 2010, TIPS real yields, day-over-day changes, curve spreads, inversion flags, the curve&#x27;s shape and breakeven inflation.
 
 The Treasury Yields API provides a simple, reliable way to integrate treasury yields functionality into your applications. Built for developers who need production-ready treasury yields capabilities without the complexity of building from scratch.
 
@@ -30,7 +30,11 @@ The Treasury Yields API provides a simple, reliable way to integrate treasury yi
 ```javascript
 async function callTreasuryYieldsAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/treasuryyields', {
+        const params = new URLSearchParams({
+            type: '10yr'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/treasuryyields?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +54,7 @@ callTreasuryYieldsAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/treasuryyields" \
+curl -X GET "https://api.apiverve.com/v1/treasuryyields?type=10yr" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 

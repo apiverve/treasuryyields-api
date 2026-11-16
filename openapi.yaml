@@ -4,8 +4,9 @@ info:
   description: >-
     Treasury Yields provides current and historical US Treasury
     constant-maturity market yields across the full curve (1-month through
-    30-year), plus TIPS real yields. Paid plans add curve spreads, inversion
-    flags, the curve's shape and breakeven inflation for yield curve analysis.
+    30-year), plus TIPS real yields. Every plan gets today's full nominal curve.
+    Paid plans add history back to 2010, TIPS real yields, day-over-day changes,
+    curve spreads, inversion flags, the curve's shape and breakeven inflation.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -41,7 +42,8 @@ paths:
           description: >-
             Optional filter for a single point. Legacy security types: bills,
             notes, bonds, tips, frn. Or a maturity: 1mo, 3mo, 6mo, 1yr, 2yr,
-            3yr, 5yr, 7yr, 10yr, 20yr, 30yr
+            3yr, 5yr, 7yr, 10yr, 20yr, 30yr. tips and frn are paid-plan values;
+            on the free plan they return a null rate with a note
           example: 10yr
       responses:
         '200':
