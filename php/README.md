@@ -1,6 +1,6 @@
 # Treasury Yields API - PHP Package
 
-Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Paid plans add curve spreads, inversion flags, the curve's shape and breakeven inflation for yield curve analysis.
+Treasury Yields provides current and historical US Treasury constant-maturity market yields across the full curve (1-month through 30-year), plus TIPS real yields. Every plan gets today's full nominal curve. Paid plans add history back to 2010, TIPS real yields, day-over-day changes, curve spreads, inversion flags, the curve's shape and breakeven inflation.
 
 ## Installation
 
