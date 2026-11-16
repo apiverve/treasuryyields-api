@@ -17,7 +17,7 @@ namespace APIVerve.API.TreasuryYields
         public string Date { get; set; }
 
         /// <summary>
-        /// Optional filter for a single point. Legacy security types: bills, notes, bonds, tips, frn. Or a maturity: 1mo, 3mo, 6mo, 1yr, 2yr, 3yr, 5yr, 7yr, 10yr, 20yr, 30yr
+        /// Optional filter for a single point. Legacy security types: bills, notes, bonds, tips, frn. Or a maturity: 1mo, 3mo, 6mo, 1yr, 2yr, 3yr, 5yr, 7yr, 10yr, 20yr, 30yr. tips and frn are paid-plan values; on the free plan they return a null rate with a note
         /// </summary>
         [JsonProperty("type")]
         public string Type { get; set; }
